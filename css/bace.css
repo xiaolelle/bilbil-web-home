@@ -1,0 +1,33 @@
+/* 全局样式 */
+
+*{
+    margin: 0;                /* 元素外边距 */
+    padding: 0;               /* 元素内边距 */
+    box-sizing: border-box;  /* 让内边距和边框的宽度计算总和为实际宽度 */
+    font-weight: normal;       /* 统一清楚字体粗细 */
+}
+
+ul,ol,li{
+    list-style: none;    /* list-style: none; 这个属性值的意思是移除列表项前默认的标记。 */
+}
+ 
+a{
+    text-decoration: none;  /* 文本装饰去掉超链接的下划线 */
+    color: #000;
+}   
+
+body{
+    /* background-color: rgb(245, 205, 153);   */
+    font-size: 14px;         /* 字体大小 */
+}
+
+input{
+    border: 0 none;          /* 去掉input框的边框 */
+    outline-style: none;    /* 去掉input框的轮廓聚焦 */
+}
+
+img{
+    vertical-align: middle;   /* 当将 vertical-align 属性设置为 middle 时，它会使元素的中间部分与其父元素中相应位置的内容对齐。这通常用于以下场景：
+                                   行内元素：如<span>、<img>、<input>等，在水平排列的行内元素中使其垂直居中对齐。
+                                   表格单元格：在表格中，vertical-align: middle; 可以使单元格中的内容垂直居中对齐。 */
+}

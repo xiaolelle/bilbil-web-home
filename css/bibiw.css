@@ -1,0 +1,557 @@
+.bilibili-nav{     /* 导航栏整体结构 */
+    display: flex;        /* 采用flex弹性布局 */
+    align-items: center;  /*  垂直居中 */
+    width: 100%;         /* 宽度为100% */
+    padding: 0 24px;    /* 左右边距为24px */
+}
+
+.left-entry{     /* 左侧导航栏 */
+  display: flex;
+}
+
+.left-entry .entry-title{  /* 左侧导航栏标题 */
+    display: flex;
+    align-items: center;   
+    height: 64px;           /* 高度为64px */
+    color: #FFF;            /* 字体颜色为白色 */  
+    margin-right: 15px;     /* 右侧间距为15px */
+    transition: transform 0.2s ease; /* 设置动画效果 */
+}
+
+ .left-entry .entry-title:hover{
+   transform: translateY(-5px);  /* 向上移动5px以实现跳动效果 */
+ }
+
+.left-entry .entry-title svg{     /* 左侧导航栏标题图标 */
+    margin-right: 6px;     
+ }
+
+ /* 中间搜索区域 */
+ .nav-search-container{
+    flex: 1;  /* 宽度自适应 */
+    height: 40px;
+    padding: 0 48px 0 4px;  /* 上，下边距为0，右边距为48px，左边距为4px 顺时针方向*/
+    border-radius: 8px;  /* 边框圆角为8px */
+    border: 1px solid #e3e5e7;  /* 边框宽度为1px，边框样式为#e3e5e7 */
+    background-color: #f1f2f3;  
+    display: flex;
+    align-items: center;  
+    position: relative;  /* 相对定位 */
+ }
+
+ .nav-search-container:hover{
+    background-color: #fff;  /* :hover伪类选择器，鼠标悬停时背景颜色为#e3e5e7 */
+ }
+ 
+ /* 搜索输入框 */
+ .nav-search-container .nav-search-content{    
+    display: flex;
+    height: 20px;
+    width: 100%;
+    padding: 0 8px;
+
+ }
+
+ /* input的样式 */
+ .nav-search-content .nav-search-input{      
+    flex: 1;
+    background-color: transparent;  /* 背景颜色透明 */
+    line-height: 20px;            /* 行高为20px */
+    overflow: hidden;             /* 隐藏溢出 */
+    padding-right: 8px;           /* 右侧内边距为8px */
+ }
+
+
+   /* 搜索按钮 */
+ .nav-search-container .nav-search-button{
+    position: absolute;  /* 绝对定位 */
+    top: 4px;           /* 上边距为4px */
+    right: 7px;         /* 右边距为7px */
+    display: flex;
+    align-items: center;
+    justify-content: center;    /* 水平居中 */
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    border-radius: 6px;
+    cursor:   pointer;        /* 鼠标指针俗称小手 */
+    transition: background-color 0.3s;    /* 动画过渡效果 */
+ }
+
+ .nav-search-container .nav-search-button:hover{
+    background-color: #e3e4e5;     /* :hover伪类选择器，鼠标悬停时背景颜色为#e3e4e5 */
+ }
+
+
+ /* 右侧导航栏 */
+ .right-entry{
+    display: flex;
+    margin-left: 10px;    /* 左侧间距为10px */
+    align-items: center;
+ }
+
+ .right-entry .header-avatar{    /* 右侧头像 */
+   height: 50px;
+   width: 50px;
+   padding-right: 10px;
+   position: relative;
+ }
+
+ .right-entry .header-avatar a{    /* 右侧头像链接 */
+    position: absolute;
+    top: 6px; 
+    left: 10px;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;      /* 行高为36px */
+    border-radius: 50%;    /* 圆角半径为50% */
+    display: flex;
+    justify-content: center;   
+    border: 2px solid #ffffff;  
+    background-color: #56bffb;
+    color: #FFF;
+}
+
+.right-entry .right-entry-item{    /* 右侧导航栏项目 */
+    min-width: 50px;    /* 最小宽度为50px */
+    margin-right: 4px;  /* 右侧间距为4px */
+}
+
+.right-entry .right-entry-item a{    /* 右侧导航栏项目链接 */
+    display: flex;
+    flex-direction: column;   /* 因为flex是横向布局，要更改显示方向在flex里有一个轴的概念为column按列显示即纵向显示 direction文本方向 */
+    align-items: center;
+    color: #FFF;
+ }
+
+ .right-entry .right-entry-item a span{    /* 右侧导航栏项目链接文字 */
+    font-size: 13px;
+}
+
+.right-entry .upload{    /* 右侧上传按钮 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90px;
+    height: 34px;
+    line-height: 34px;
+    border-radius: 8px;
+    color: #FFF;
+    background-color: #fb7299;
+    margin-left: 10px;
+   }
+
+.right-entry .upload span{    /* 右侧上传按钮文字 */
+        margin-left: 5px;
+}
+
+.right-entry-item svg{    /* 右侧导航栏项目图标 */
+   transition: transform 0.2s ease-in-out;
+}
+
+.right-entry-item:hover svg{    /* :hover伪类选择器，鼠标悬停时图标向上移动 */
+   animation: bounce 0.3s forwards;
+}
+
+@keyframes bounce {      /* 定义动画 */
+   0% {
+       transform: translateY(0);
+   }
+   50% {
+       transform: translateY(-5px);
+   }
+   100% {
+       transform: translateY(0);
+   }
+}
+
+/* banner 横幅图 */
+.bilibili-nav{ 
+   position: absolute;
+   top: 0;
+   z-index: 1000;        /* 调整定位层级为1000 */
+}
+
+.bilibili-banner{         /* 导航栏横幅图 */
+   position: relative;
+   height: 155px;
+   width: 100%;
+   overflow: hidden;
+}
+
+.bilibili-banner img{     
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;   /* 图片缩放模式为覆盖 */
+}
+
+.bilibili-banner .logo{    /* 导航栏横幅图logo */
+   width: 100%;
+   height: 100%;
+   padding: 0 64px;
+   display: flex;
+   align-items: flex-end;        /* 垂直居中 flex-end 交叉轴的终点对齐。 */
+}
+
+.bilibili-banner .logo a{
+   position: relative;
+   width: 162px;
+   height: 78px;
+   margin-bottom: 10px;
+}
+
+.bilibili-banner .mask{
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   /*linear-gradient是线性渐变 背景颜色为rgba(0,0,0,0.4) 透明度为0.4 */
+   background-color: linear-gradient(rgba(0,0,0,0.4) transition); 
+}
+
+
+/* 频道区域 */
+.bilibili-channel{
+   height: 110px;
+   padding: 0 60px;
+   display: flex;
+   align-items: center;
+}
+
+.bilibili-channel .channel-icons{
+   display: flex;
+}
+
+.bilibili-channel .channel-icons a{         /* 频道图标 */
+   display: flex;
+   flex-direction: column;   
+   justify-content: center;
+   margin-right: 24px;   /* 右侧间距为24px */
+}
+
+.bilibili-channel .icon-bg{           /* 频道图标背景 */
+   width: 46px;
+   height: 46px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border-radius: 50%;
+   margin-bottom: 6px;
+}
+
+.bilibili-channel .icon-bg__dynamic{
+   background-color: #ff9212;
+}
+.bilibili-channel .icon-bg__popular{
+   background-color: #f07775;
+}
+.bilibili-channel .icon-bg__channer{
+   background-color: #59ca73;
+}
+
+.bilibili-channel .icon-bg svg{           /* 频道图标svg */
+   width: 25px;
+   height: 25px;
+}
+
+.bilibili-channel span{    
+   text-align: center;
+}
+
+.bilibili-channel .right-channel-container{
+   width: 100%;
+   display: flex;
+}
+
+
+/* 左侧频道项列表 样式处理 列 */
+.bilibili-channel .channel-items__left{
+   display: grid;       /* 采用网格布局 */
+   grid-template-columns: repeat(11, 1fr);      /*属性用于定义网格容器的列结构。repeat(11, 1fr) 表示将列配置重复11次，每次使用 1fr 作为列的大小。 网格列数为11 */
+   gap: 10px;           /* 网格间距为10px */
+   width: 100%;
+}
+
+.bilibili-channel .channel-items__left a{
+   height: 26px;
+   line-height: 26px;
+   background-color: #f6f7f8;
+   border: 1px solid #f1f2f3;
+   border-radius: 6px;
+   text-align: center;
+   color: #61666d;
+}
+
+/* 右侧频道项列表 样式处理  行*/
+.bilibili-channel .channel-items__right{
+   width: 240px;
+   display: grid;  
+   grid-template-rows: repeat(2, 1fr);   /* 属性用于定义网格容器的行结构。repeat(2, 1fr) 表示将行配置重复2次，每次使用 1fr 作为行的大小。 网格行数为2 */
+   grid-auto-flow: column;   /* 属性用于定义网格项的排列方式。column 代表网格项沿着垂直方向排列 比如123456就会垂直排列为12 34 56 */
+   row-gap: 10px;            /* 网格行间距为10px */
+   flex-shrink: 0;           /* 属性用于设置网格项的收缩比例。0 代表网格项不收缩 避免被挤压*/
+   margin-left: 30px;
+   border-left: 1px solid #e2e5e7;
+}
+
+.channel-items__right a{
+   width: 100%;
+   height: 28px;
+   letter-spacing: 2px;      /* wenzi间距为2px */
+   display: flex;
+   align-items: center;
+   justify-content: flex-end;      /* 内容居右 */
+}
+
+.channel-items__right svg{
+   width: 20px;
+   height: 20px;
+   margin-right: 4px;
+   fill: #61666d;   /* 字体颜色为#61666d */
+}
+
+.channel-items__right span{
+   color: #61666d;
+}
+
+
+
+/* 推荐列表 */
+.main{
+   width: 100%;
+   padding: 0 60px;      
+   box-sizing: border-box;      /* 边框盒模型 */
+}
+
+.main .recommended-container{
+   display: grid;
+   grid-template-columns: repeat(5 , 1fr);   /* 属性用于定义网格容器的列结构。repeat(5, 1fr) 表示将列配置重复5次，每次使用 1fr 作为列的大小。 网格列数为5 */
+   gap: 20px;           /* 网格间距为20px */
+   width: 100%;
+}
+
+.main .recommended-card .card-image{
+   position: relative;
+   border-radius: 6px;
+   overflow: hidden;
+}
+
+.main .card-image img{
+   width: 100%;
+   height: 100%;
+   /* vertical-align: middle;        */
+}
+
+.card-image .image-mask{
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   padding: 16px 8px 6px;
+   width: 100%;
+   box-sizing: border-box;  /* 避免溢出宽度100时通常配合box边框盒模型 */
+   height: 38px;
+   /* 线性渐变背景 180deg度  */
+   background-image: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.8) 100%);
+   color: #FFF;
+   font-size: 13px;
+   display: flex;
+   align-items: center;
+}
+
+.card-image .image-mask .stats-left{
+   flex: 1;               /* 宽度自适应 这样左边就会撑满 因为右边要固定尺寸*/
+   display: flex;
+   align-items: center;
+}
+.image-mask .stats-left .stats-item{
+   display: flex;
+   align-items: center;
+   margin-right: 12px;
+}
+
+.image-mask svg{
+   width: 18px;
+   height: 18px;
+   margin-right: 2px;     
+   color: #FFF;
+}
+
+/* 图片标题底部信息 */
+.card-info h3{
+   line-height: 22px;
+   padding-right: 16px;
+   font-size: 15px;
+   overflow: hidden;
+   display: -webkit-box;     /* 兼容旧版Webkit内核浏览器 */  
+   -webkit-box-orient: vertical;     /* 垂直方向截断 */
+   line-break: anywhere;      /* 允许在单行之间换行 */
+   line-clamp : 2;      /* 兼容显示的行数2 */
+   -webkit-line-clamp: 2;      /* 显示的行数 */
+}
+
+.info-bottom{
+   margin-top: 4px;
+   display: flex;
+   font-size: 13px;
+}
+
+.info-bottom a{
+   color: #9499a0;
+   display: flex;
+   align-items: center;
+}
+
+.info-bottom svg{
+   width: 17px;
+   height: 17px;
+   margin-right: 2px;
+}
+
+.info-bottom .info-date{
+   margin-left: 4px;
+}
+
+
+/*  轮播图 */
+.recommended-container .carousel-area{
+   grid-row: 1/3;   /* 网格行1到3 */
+   grid-column: 1/3;   /* 网格列1到3 */
+   border-radius: 6px;
+   overflow: hidden;
+   position: relative;
+}
+
+.carousel-area img{
+   width: 100%;
+}
+
+.carousel-area .mask{
+   width: 100%;
+   height: 392px;
+   position: absolute;
+   top: 0;
+   background: linear-gradient(0,#582a61 23%,transparent 35%);   /* 背景颜色为#524c46 透明度为23% 到透明度为35% */
+   border-radius: 6px;
+}
+
+.carousel-area .tools{
+   width: 100%;
+   position: absolute;
+   bottom: 94px;
+   left: 0px;
+   padding: 0 15px;
+   box-sizing: border-box;
+
+}
+
+.carousel-area .tools a{
+   display: flex;
+   margin-bottom: 10px;
+   font-size: 18px;
+   color: #FFF;
+}
+
+.carousel-area .tools ul{
+   display: flex;
+}
+
+.carousel-area .tools li{
+   width: 8px;
+   height: 8px;
+   margin: 4px;
+   border-radius: 50%;
+   background-color: #FFF6;
+   cursor: pointer;   /* 鼠标指针 */
+}
+
+.carousel-area .tools li.active{
+   width: 14px;
+   height: 14px;
+   margin: 1px;
+   background-color: #FFF;
+}
+
+.carousel-area .tools .buttons{
+   position: absolute;
+   bottom: 23px;
+   right: 15px;
+}
+
+.tools button{
+   width: 28px;
+   height: 28px;
+   border-radius: 8px;
+   margin-right: 8px;
+   display: inline-flex;    /* 内联块级元素 */
+   align-items: center;
+   justify-content: center;
+   background-color: #ffffff1a;
+   cursor: pointer;
+   border: 0 none;          /* 去掉input框的边框 */
+   transition: background-color 0.3s ease; /* 添加过渡效果 */
+}
+
+.tools button:hover {
+   background-color: #ffffff4d; /* 鼠标悬停时改变背景颜色 */
+ }
+
+.tools button:last-child{
+   margin-right: 0;
+}
+
+.tools svg{
+   width: 12px;
+   height: 12px;
+   color: #FFF;
+}
+
+
+/* 侧边栏 */
+.sidebar{
+   position: fixed;    /* 固定定位 */
+   bottom: 40px; 
+   right: 12px;
+}
+
+.sidebar .primary-btn{     
+   width: 40px;
+   margin-top: 6px;
+   padding: 8px 0 6px;
+   box-sizing: border-box;
+   border: 1px solid #e3e5e7;
+   border-radius: 8px;
+   background-color: #fff;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+   font-size: 12px;
+   cursor: pointer;  
+}
+
+.sidebar .primary-btn svg{
+   width: 24px;
+   height: 24px;
+}
+
+.primary-btn .primary-btn-text{
+   margin-top: 2px;
+}
+
+.primary-btn.goback{
+   padding: 4px;
+}
+
+.primary-btn.top-btn{
+   margin-top: 12px; 
+}
+
+.primary-btn.top-btn svg{
+   width: 15px;
+   height: 8px;
+}
